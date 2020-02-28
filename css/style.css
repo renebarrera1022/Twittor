@@ -11,6 +11,13 @@
     font-size: 16px;
     background-color: #dde1e2; 
     width: 100%;
+    /* Android */
+    overscroll-behavior-y: contain;
+
+    /* IOS */
+    -webkit-user-select: none; /*Para que no pueda seleccionar texto, por ej para copiar y pegar*/
+    -webkit-tap-highlight-color: transparent; /*Para quitar el color de un link que ha sido cliqueado*/
+    -webkit-touch-callout: none; /*Para quitar el menú que se despliega cuando mantienes presionado un elemento*/
 }
 
 /* Personalizados */

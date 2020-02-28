@@ -3,8 +3,8 @@ importScripts('js/sw-utils.js');
 
 self.skipWaiting();
 
-const CACHE_STATIC = 'static-v1';
-const CACHE_DYNAMIC = 'dynamic-v1';
+const CACHE_STATIC = 'static-v2';
+const CACHE_DYNAMIC = 'dynamic-v2';
 const CACHE_INMUTABLE = 'inmutable';
 
 const appShell = [
