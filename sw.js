@@ -55,14 +55,21 @@ self.addEventListener('install', e=>{
 
 self.addEventListener('activate', e=>{
     //Eliminando versiones antiguas del cache
-    const versionCache = caches.keys().then(keys=>{
+    const versionCacheS = caches.keys().then(keys=>{
         keys.forEach(k =>{
             if(k !== CACHE_STATIC && k.includes('static')){
                 return caches.delete(k);
             }
         });
     });
-    e.waitUntil(versionCache);
+    const versionCacheD = caches.keys().then(keys=>{
+        keys.forEach(k =>{
+            if(k !== CACHE_INMUTABLE && k.includes('dynamic')){
+                return caches.delete(k);
+            }
+        });
+    });
+    e.waitUntil(Promise.all([versionCacheS, versionCacheD]));
 });
 
 self.addEventListener('fetch', e=>{
