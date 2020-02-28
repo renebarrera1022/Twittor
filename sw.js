@@ -8,7 +8,7 @@ const CACHE_DYNAMIC = 'dynamic-v1';
 const CACHE_INMUTABLE = 'inmutable';
 
 const appShell = [
-    '/',
+    // '/',
     'index.html',
     'pages/offline.html',
     'css/style.css',
